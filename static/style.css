@@ -1,0 +1,321 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080b14;
+    color: white;
+    min-height: 100vh;
+}
+
+.page {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px;
+}
+
+
+/* HEADER */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 0;
+    border-bottom: 1px solid #202638;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.logo span {
+    margin-left: 5px;
+}
+
+.model-status {
+    font-size: 12px;
+    color: #8d98ad;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: #31e981;
+    border-radius: 50%;
+}
+
+
+/* HERO */
+
+.hero {
+    text-align: center;
+    padding: 70px 20px 45px;
+}
+
+.tag {
+    display: inline-block;
+
+    padding: 7px 15px;
+    border-radius: 20px;
+
+    background: #151b2c;
+    color: #8ea2ff;
+
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #7185ff;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: auto;
+
+    color: #8993a8;
+    line-height: 1.7;
+}
+
+
+/* INPUT CARD */
+
+.input-card {
+    background: #101522;
+
+    border: 1px solid #242c3e;
+    border-radius: 18px;
+
+    padding: 30px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.card-header h2 {
+    font-size: 21px;
+    margin-bottom: 6px;
+}
+
+.card-header p {
+    color: #7f899d;
+    font-size: 14px;
+}
+
+.mail-icon {
+    font-size: 30px;
+}
+
+
+textarea {
+    width: 100%;
+    height: 190px;
+
+    background: #080c15;
+    color: white;
+
+    border: 1px solid #30394d;
+    border-radius: 12px;
+
+    padding: 18px;
+
+    font-size: 15px;
+    line-height: 1.6;
+
+    outline: none;
+    resize: vertical;
+}
+
+textarea:focus {
+    border-color: #7185ff;
+}
+
+
+button {
+    width: 100%;
+
+    margin-top: 18px;
+    padding: 16px;
+
+    border: none;
+    border-radius: 11px;
+
+    background: #7185ff;
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+button:hover {
+    background: #8294ff;
+    transform: translateY(-2px);
+}
+
+
+/* RESULT */
+
+.result-card {
+    margin-top: 22px;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.result-icon {
+    font-size: 42px;
+}
+
+.result-card h2 {
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.result-card p {
+    color: #a0a8b8;
+}
+
+.spam {
+    background: #291519;
+    border: 1px solid #9d3c48;
+}
+
+.spam h2 {
+    color: #ff6575;
+}
+
+.safe {
+    background: #10271d;
+    border: 1px solid #2f8957;
+}
+
+.safe h2 {
+    color: #46dc82;
+}
+
+.warning {
+    background: #292512;
+    border: 1px solid #a18a35;
+}
+
+
+/* STATS */
+
+.stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 22px;
+}
+
+.stat {
+    background: #101522;
+
+    border: 1px solid #242c3e;
+    border-radius: 14px;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+}
+
+.stat > span {
+    font-size: 25px;
+}
+
+.stat small {
+    display: block;
+
+    color: #707b91;
+
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    margin-bottom: 5px;
+}
+
+.stat strong {
+    font-size: 14px;
+}
+
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+
+    color: #596378;
+
+    font-size: 12px;
+
+    padding: 35px 0 15px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .header {
+        align-items: flex-start;
+    }
+
+    .model-status {
+        display: none;
+    }
+
+    .input-card {
+        padding: 20px;
+    }
+}

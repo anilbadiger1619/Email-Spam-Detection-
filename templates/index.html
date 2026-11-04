@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SpamGuard - Email Detection</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="logo">
+            🛡️ <span>SpamGuard</span>
+        </div>
+
+        <div class="model-status">
+            <span class="dot"></span>
+            ML MODEL ACTIVE
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main>
+
+        <section class="hero">
+
+            <div class="tag">
+                MACHINE LEARNING
+            </div>
+
+            <h1>
+                Email Spam<br>
+                <span>Detection System</span>
+            </h1>
+
+            <p>
+                Analyze your email messages using
+                Machine Learning and automatically
+                identify unwanted spam.
+            </p>
+
+        </section>
+
+
+        <!-- INPUT CARD -->
+        <section class="input-card">
+
+            <div class="card-header">
+
+                <div>
+                    <h2>Analyze Message</h2>
+                    <p>Paste your email or message below</p>
+                </div>
+
+                <div class="mail-icon">
+                    ✉️
+                </div>
+
+            </div>
+
+
+            <form method="POST">
+
+                <textarea
+                    name="message"
+                    placeholder="Example: Congratulations! You have won a free prize..."
+                    required>{{ message }}</textarea>
+
+
+                <button type="submit">
+                    🔍 Analyze Message
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- RESULT -->
+        {% if result %}
+
+        <section class="result-card
+            {% if result == 'SPAM' %}
+                spam
+            {% elif result == 'NOT SPAM' %}
+                safe
+            {% else %}
+                warning
+            {% endif %}
+        ">
+
+            {% if result == "SPAM" %}
+
+                <div class="result-icon">
+                    🚨
+                </div>
+
+                <div>
+                    <h2>SPAM DETECTED</h2>
+                    <p>
+                        This message has been classified
+                        as a spam message.
+                    </p>
+                </div>
+
+            {% elif result == "NOT SPAM" %}
+
+                <div class="result-icon">
+                    ✅
+                </div>
+
+                <div>
+                    <h2>NOT SPAM</h2>
+                    <p>
+                        This message appears to be safe.
+                    </p>
+                </div>
+
+            {% else %}
+
+                <div class="result-icon">
+                    ⚠️
+                </div>
+
+                <div>
+                    <h2>{{ result }}</h2>
+                </div>
+
+            {% endif %}
+
+        </section>
+
+        {% endif %}
+
+
+        <!-- MODEL INFORMATION -->
+        <section class="stats">
+
+            <div class="stat">
+                <span>🤖</span>
+                <div>
+                    <small>ALGORITHM</small>
+                    <strong>Naive Bayes</strong>
+                </div>
+            </div>
+
+
+            <div class="stat">
+                <span>📊</span>
+                <div>
+                    <small>FEATURE EXTRACTION</small>
+                    <strong>TF-IDF</strong>
+                </div>
+            </div>
+
+
+            <div class="stat">
+                <span>🐍</span>
+                <div>
+                    <small>BACKEND</small>
+                    <strong>Python + Flask</strong>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        Email Spam Detection • Machine Learning Mini Project
+    </footer>
+
+</div>
+
+</body>
+</html>
